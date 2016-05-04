@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <title>CircleProgressBar -  最简单的 Android 圆形进度条控件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.useso.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="favicon.png" type=" image/png" >
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">CircleProgressBar</h1>
+      <h2 class="project-tagline">完美实现圆形进度条<br />支持自定义颜色、边框、背景等属性</h2>
+      <a href="https://github.com/Vultur/CircleProgressBar" class="btn">开源贡献</a>
+      <a href="https://github.com/Vultur/CircleProgressBar/archive/master.zip" class="btn">免费下载</a>
+      <a href="http://osslab.online/" class="btn">更多项目</a>
+    </section>
+
+    <section class="main-content">
+
+<p><img src="./circleprogressbar.jpg" alt="CircleImageView"></p>
+
+<p>
+<a href="#"><img src="https://img.shields.io/badge/Android%20Arsenal-CircleImageView-lightgrey.svg?style=flat" alt="CircleProgressBar" /></a>
+<a href="http://developer.android.com/index.html" target="_blank"><img src="https://img.shields.io/badge/platform-android-green.svg" alt="CircleProgressBar" /></a>
+<a href="https://android-arsenal.com/api?level=11" target="_blank"><img src="https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat" alt="CircleProgressBar" /></a>
+<a href="http://osslab.online/" target="_blank"><img src="https://img.shields.io/badge/OSSLab-开源软件实验室-blue.svg?style=flat" alt="开源软件实验室" /></a>
+</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用方法</h1>
+
+<p>首先，你需要导入模块项目或者添加依赖类库：</p>
+
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">dependencies</span> {
+    compile <span class="pl-s"><span class="pl-pds">'</span> online.osslab:CircleProgress:1.0.0<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<h2>
+<a id="xml" class="anchor" href="#xml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>样式文件</h2>
+
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">online.osslab.CircleProgressBar</span>
+    <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">circle</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res-auto<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>@+id/circleProgressBar<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span>
+    <span class="pl-e">circle</span><span class="pl-e">:</span><span class="pl-e">background_color</span>=<span class="pl-s"><span class="pl-pds">"</span>#FFCDD2<span class="pl-pds">"</span></span>
+    <span class="pl-e">circle</span><span class="pl-e">:</span><span class="pl-e">background_width</span>=<span class="pl-s"><span class="pl-pds">"</span>5dp<span class="pl-pds">"</span></span>
+    <span class="pl-e">circle</span><span class="pl-e">:</span><span class="pl-e">progress_color</span>=<span class="pl-s"><span class="pl-pds">"</span>#F44336<span class="pl-pds">"</span></span>
+    <span class="pl-e">circle</span><span class="pl-e">:</span><span class="pl-e">progress_width</span>=<span class="pl-s"><span class="pl-pds">"</span>10dp<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+
+
+<h4>
+<a id="1-provide-the-gradle-dependency" class="anchor" href="#1-provide-the-gradle-dependency" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>图形属性：</h4>
+
+<ul>
+<li><span class="pl-e">circle</span>:<span class="pl-pds">progress_value</span> (integer) 默认值：0</li>
+<li><span class="pl-e">circle</span>:<span class="pl-pds">progress_color</span> (color) 默认值：BLACK</li>
+<li><span class="pl-e">circle</span>:<span class="pl-pds">background_color</span> (color) 默认值：GRAY</li>
+<li><span class="pl-e">circle</span>:<span class="pl-pds">progress_width</span> (dimension) 默认值：7dp</li>
+<li><span class="pl-e">circle</span>:<span class="pl-pds">background_width</span> (dimension) 默认值：3dp</li>
+</ul>
+
+
+<h2>
+<a id="2-config-your-jcenter-repository" class="anchor" href="#2-config-your-jcenter-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>代码构建</h2>
+
+<div class="highlight highlight-text-xml"><pre class="site-footer-credits">
+<span class="pl-ent">CircleProgressBar</span> <span class="pl-e">circleProgressBar</span> = (<span class="pl-ent">CircleProgressBar</span>)<span class="pl-mq">findViewById</span>(<span class="pl-pds">R</span>.<span class="pl-pds">id</span>.<span class="pl-id">myCircleProgressBar</span>);
+
+<span class="pl-e">circleProgressBar</span>.<span class="pl-pds">setColor</span>(<span class="pl-mo">ContextCompat</span>.<span class="pl-smi">getColor</span>(<span class="pl-ml">this</span>,<span class="pl-pds">R</span>.<span class="pl-pds">color</span>.<span class="pl-ent">progressBarColor</span>));
+
+<span class="pl-e">circleProgressBar</span>.<span class="pl-pds">setBackgroundColor</span>(<span class="pl-mo">ContextCompat</span>.<span class="pl-smi">getColor</span>(<span class="pl-ml">this</span>,<span class="pl-pds">R</span>.<span class="pl-pds">color</span>.<span class="pl-ent">backgroundProgressBarColor</span>));
+
+<span class="pl-e">circleProgressBar</span>.<span class="pl-pds">setProgressBarWidth</span>(<span class="pl-mo">getResources()</span>.<span class="pl-smi">getDimension</span>(<span class="pl-pds">R</span>.<span class="pl-pds">dimen</span>.<span class="pl-ent">progressBarWidth</span>));
+
+<span class="pl-e">circleProgressBar</span>.<span class="pl-pds">setBackgroundProgressBarWidth</span>(<span class="pl-mo">getResources()</span>.<span class="pl-smi">getDimension</span>(<span class="pl-pds">R</span>.<span class="pl-pds">dimen</span>.<span class="pl-ent">backgroundProgressBarWidth</span>));
+
+<span class="pl-e">int</span> <span class="pl-pds">animationDuration</span> = <span class="pl-s">2500</span>; <samp class="site-footer-credits">// 2500ms = 2.5s</samp>
+
+<span class="pl-e">circleProgressBar</span>.<span class="pl-pds">setProgressWithAnimation</span>(<span class="pl-s">65</span>,<span class="pl-smi">animationDuration</span>); <samp class="site-footer-credits">// 2500ms = 2.5s</samp></pre></div>
+
+
+
+
+<h1>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>演示示例</h1>
+
+<p><a href="http://#">360应用市场</a>
+ - <a href="http://#">小米应用商店</a>
+ - <a href="http://#">豌豆荚</a>
+ - <a href="http://#e">应用宝</a>
+ - <a href="http://#">安卓市场</a>
+</p>
+<p><img src="./preview.gif" alt="CircleProgressBar" /></p>
+
+<h1>
+<a id="developed-by" class="anchor" href="#developed-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>联系作者</h1>
+
+<ul>
+<li><a href="mailto:wall-e@live.cn">wall-e@live.cn</a></li>
+<li><a href="http://osslab.online/">开源软件实验室</a></li>
+</ul>
+
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>开发许可</h1>
+
+<pre><code>Copyright 2016 Lopez Mikhae
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner">使用 <a href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)">Apache 2.0</a> 许可协议</span>
+
+        <span class="site-footer-credits">由 <a href="http://osslab.online/">开源软件实验室</a> 提供技术支持</span>
+      </footer>
+
+    </section>
+    
+    <!-- 统计代码 -->
+
+  </body>
+</html>
