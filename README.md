@@ -28,8 +28,8 @@ compile 'online.osslab:CircleProgress:1.0.0'
     android:layout_height="wrap_content"
     circle:background_color="#FFCDD2"
     circle:background_width="5dp"
-    circle:progressbar_color="#F44336"
-    circle:progressbar_width="10dp" />
+    circle:progress_color="#F44336"
+    circle:progress_width="10dp" />
 ```
 
 当然，你还可以通过以下属性个性化圆形图像样式。
