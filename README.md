@@ -1,6 +1,6 @@
 ﻿<p align="center"><img src="./preview/circleprogressbar.jpg"></p>
 
-## CircularProgressBar
+## CircleProgressBar
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircleProgressBar-lightgrey.svg?style=flat)](http://circleprogress.osslab.online/)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
